@@ -2,10 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('../../public/css/supreme.css');
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --blue-color : #3434ec;
+  --dark-color : #151414;
+  --light-blue : #e0f1f3;
+  --light-font-color : white;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,11 +24,128 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: 'Supreme-Medium';
+  overflow-x: hidden !important;
+  margin: 0;
+  padding: 0;
+  color: var(--light-blue);
+  /* background-color: var( --dark-color); */
 }
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /* background: url('../../public/images/grain.svg'); */
+  background-color: black;
+
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+ 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: var(--blue-color);
+  border-radius: 2px;
+}
+
+
+.bg-grain{
+  background: url('../../public/images/grain.svg');
+
+}
+
+.text-stroke  {
+
+     color: var(--dark-color);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color:var(--light-blue);
+    font-weight: 500;
+    font-family: Inter Tight, sans-serif;
+}
+@keyframes cube {
+  from {
+      transform: scale(0) rotate(0deg) translate(-50%, -50%);
+      opacity: 1;
+  }
+  to {
+      transform: scale(20) rotate(960deg) translate(-50%, -50%);
+      opacity: 0;
+  }
+}
+
+
+
+
+.supreme-bold {
+  font-family: 'Supreme-Bold';
+}
+
+.heading-1 {
+  font-size:   max(4em, 4vw);
+}
+
+.heading-2 {
+  font-size:   max(2.5em, 3vw);
+}
+.big-text {
+  font-size:   max(7em, 10vw) ;
+  text-wrap: nowrap;
+}
+
+@keyframes spin-once {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.parallax {
+  overflow: hidden;
+  letter-spacing: -2px;
+  line-height: 0.8;
+  margin: 0;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.parallax .scroller {
+  font-weight: 600;
+  text-transform: uppercase;
+  display: flex;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.parallax span {
+  display: block;
+  margin-right: 30px;
+}
+
+.tag-cloud {
+  margin: auto;
+}
+.tagcloud{
+  margin: auto;
+}
+
+#cube canvas {
+  margin: auto;
+  width: 600px !important;
+  height: 600px !important;
+  max-width: 80vw;
+  max-height: 80vw;
+}
+
