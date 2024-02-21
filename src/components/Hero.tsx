@@ -190,7 +190,7 @@ const Hero = () => {
                         Hey There,
                     </p>
                     <p className='text-transparent bg-clip-text bg-gradient-to-r from-customBlue to-blue-300 heading-2 sm:heading-1 m-auto font-bold '>
-                        I'm Hicham
+                        I&apos;m Hicham
                     </p>
 
                     <div className='text-md sm:text-lg font-semibold mt-[15vh] sm:mt-[5vh] hover:cursor-pointer z-[90]' >
@@ -198,7 +198,7 @@ const Hero = () => {
                             onClick={() => scrollToSection('Contact')}
 
                             className='px-4 py-2 sm:px-8 sm:py-4 bg-customBlue  w-fit rounded-full items-center flex gap-2'>
-                            Let's Connect
+                            Let&apos;s Connect
                         </p>
                     </div>
 
