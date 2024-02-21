@@ -21,6 +21,7 @@
     "@splinetool/runtime": "^1.0.30",
     "@studio-freight/lenis": "^1.0.33",
     "@studio-freight/react-lenis": "^0.0.40",
+    "@vercel/speed-insights": "^1.0.10",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "framer-motion": "^10.17.4",
