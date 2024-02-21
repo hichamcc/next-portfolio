@@ -104,8 +104,8 @@ const Skills: React.FC<YourComponentProps> = ({ container, texts, newRadius }) =
 
                     <div className='services'>
                         {services.map((service, index) => (
-                            <div className='bg-transparent border-1 border-gray-300 border-2 rounded-2xl shadow-sm shadow-light-blue mb-2 p-4 '>
-                                <p key={index} className=' text-[32px] text-transparent bg-clip-text bg-gradient-to-r from-customBlue to-blue-300 font-bold flex gap-2 items-center'>
+                            <div key={index} className='bg-transparent border-1 border-gray-300 border-2 rounded-2xl shadow-sm shadow-light-blue mb-2 p-4 '>
+                                <p className=' text-[32px] text-transparent bg-clip-text bg-gradient-to-r from-customBlue to-blue-300 font-bold flex gap-2 items-center'>
                                     {/* <img src={service.icon.src} className='w-[48px]' alt="" /> */}
                                     {service.name}
                                 </p>
