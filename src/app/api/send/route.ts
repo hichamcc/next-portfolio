@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
     try {
         const data = await resend.emails.send({
             from: 'Portfolio <rayden@resend.dev>', // your verified domain
-            to: `${email}`, // the email address you want to send a message
+            to: `gaddariowen@gmail.com`, // the email address you want to send a message
             subject: `${subject} `,
             react: EmailTemplate({ name, email, subject, message }),
             text: message
