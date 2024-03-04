@@ -10,7 +10,7 @@ import {
     useAnimationFrame
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
-import { hero, upwork, graduate } from '../../public';
+import { upwork, graduate } from '../../public';
 import { gsap } from 'gsap';
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
