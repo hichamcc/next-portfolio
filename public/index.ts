@@ -1,5 +1,4 @@
 import logo from './images/logo.svg';
-import hero from './images/hero.png';
 import graduate from './images/graduate.png';
 import arrowRight from './images/arrow-right.svg';
 import responsive from './images/responsive.svg';
@@ -21,7 +20,7 @@ import react from './images/react.svg';
 import bash from './images/bash.svg';
 import symfony from './images/symfony.svg';
 import nodejs from './images/nodejs.svg';
-import php from './images/react.svg';
+import php from './images/php.svg';
 import website_1 from './images/website-1.png';
 import website_2 from './images/website-2.png';
 import website_3 from './images/website-3.png';
@@ -32,10 +31,11 @@ import upworksvg from './images/upwork.svg';
 import upwork from './images/upwork.png';
 import whatsapp from './images/whatsapp.svg';
 import github from './images/github.svg';
+import framer from './images/framer.svg';
 export {
     logo,
-    hero,
     upwork,
+    framer,
     upworksvg,
     google,
     whatsapp,
