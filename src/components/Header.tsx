@@ -21,7 +21,7 @@ const Header = () => {
     const blur = useRef<HTMLInputElement>(null);
 
     useGSAP(() => {
-        gsap.set('#logo', { visibility: 'visible', y: '49vh', x: '50vw', xPercent: -50, scale: 2, })
+        gsap.set('#logo', { visibility: 'visible', y: '49vh', x: '50vw', xPercent: -50, scale: 1.8, })
         gsap.set('#logo', {})
 
         // use selectors...
@@ -36,8 +36,8 @@ const Header = () => {
         <>
             <div ref={app} className='header sticky z-[101] w-full h-[68px] flex justify-between  p-5 invisible'>
                 <div id="logo" className='group flex gap-2 pl-2'>
-                    <img src={logo.src} className='w-[32px] group-hover:animate-spinOnce' alt="" />
-                    <Link href={"#"} className=' text-lg font-bold group-hover:' >
+                    <img src={logo.src} className='sm:w-[32px] w-[24px] group-hover:animate-spinOnce' alt="" />
+                    <Link href={"#"} className='sm:text-lg text-md font-bold group-hover:' >
                         Code <span className='text-customBlue'>By</span>  Hicham
                     </Link>
                 </div>
