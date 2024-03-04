@@ -8,22 +8,22 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 const Heading = ({ title, trigger }: { title: string, trigger: string }) => {
 
 
-    useGSAP(() => {
-        gsap.registerPlugin(ScrollTrigger);
-        const heading = new SplitType(`.${trigger} .intro-heading`, { types: "chars" });
-        gsap.set(".wrapper", { autoAlpha: 1, visibility: 'visible' });
-        gsap.set(heading.chars, { yPercent: 100 });
-        const initialAnimation = gsap.to(heading.chars, {
-            yPercent: 0,
-            ease: "sine.out",
-            stagger: { from: "start", amount: 1, ease: "power.out" },
-            scrollTrigger: {
-                trigger: `.${trigger}`,
-                start: "top bottom",
-            }
-        });
+    // useGSAP(() => {
+    //     gsap.registerPlugin(ScrollTrigger);
+    //     const heading = new SplitType(`.${trigger} .intro-heading`, { types: "chars" });
+    //     gsap.set(".wrapper", { autoAlpha: 1, visibility: 'visible' });
+    //     gsap.set(heading.chars, { yPercent: 100 });
+    //     const initialAnimation = gsap.to(heading.chars, {
+    //         yPercent: 0,
+    //         ease: "sine.out",
+    //         stagger: { from: "start", amount: 1, ease: "power.out" },
+    //         scrollTrigger: {
+    //             trigger: `.${trigger}`,
+    //             start: "top bottom",
+    //         }
+    //     });
 
-    }, {});
+    // }, {});
 
     return (
         <div className={`wrapper wrapper-heading overflow-hidden mb-8 invisible text-center `}>

@@ -78,9 +78,6 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
 }
 
 
-
-
-
 const Hero = () => {
 
 
@@ -172,7 +169,7 @@ const Hero = () => {
 
     return (
         <section id='Home' className='hero-section relative h-[100vh] max-w-[100vw] overflow-hidden  '>
-            <div className="hero absolute w-full m-auto flex items-center justify-center h-screen lg:z-10 z-0  ">
+            <div className="hero absolute w-full m-auto flex items-center justify-center h-screen lg:z-10 z-0 mt-20 sm:mt-0 ">
                 {/* <img src={hero.src} alt="Your Image" className=" absolute inset-0 m-auto sm:h-[70vh] h-[50vh] top-80 mt-[60px] " /> */}
 
                 <Spline
@@ -218,8 +215,6 @@ const Hero = () => {
 
 
             <div className='bottom-40 absolute max-w-[100vw] m-auto'>
-
-
                 <ParallaxText baseVelocity={-1}>Transforming Ideas into Reality -</ParallaxText>
             </div>
         </section>
