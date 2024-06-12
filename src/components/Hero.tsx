@@ -190,7 +190,7 @@ const Hero = () => {
                         I&apos;m Hicham
                     </p>
 
-                    <div className='text-md sm:text-lg font-semibold mt-[15vh] sm:mt-[5vh] hover:cursor-pointer z-[90]' >
+                    <div className='text-md sm:text-lg font-semibold mt-[15vh] sm:mt-[5vh] hover:cursor-pointer z-[99]' >
                         <p
                             onClick={() => scrollToSection('Contact')}
 

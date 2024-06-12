@@ -68,7 +68,7 @@ const Skills: React.FC<YourComponentProps> = ({ container, texts, newRadius }) =
         }
     ];
 
-    const skills = [react, next, tailwind, nodejs, angular, aws, laravel, framer, git, php];
+    const skills = [react, next, tailwind, nodejs, angular, aws, laravel, framer, git, php, symfony];
 
 
     const [radius, setRadius] = useState(300);

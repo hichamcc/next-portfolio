@@ -14,6 +14,7 @@ import Hero from '@/components/Hero';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Lenis from '@studio-freight/lenis'
+import { Project } from '@/components/Project';
 
 export default function Home() {
   useEffect(() => {
@@ -66,7 +67,7 @@ export default function Home() {
       <Hero />
       <About />
       <Skills container={''} texts={[]} newRadius={0} />
-      <Projects />
+      <Project />
       <Contact />
       <Footer />
     </div>

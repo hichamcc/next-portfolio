@@ -5,6 +5,7 @@ import SplitType from 'split-type'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Feedback from './Feedback';
 import Heading from './Heading';
+import Testimonials from './Testimonials';
 function About() {
 
     const introRef = useRef<HTMLInputElement>(null);
@@ -72,7 +73,7 @@ function About() {
             </div>
 
 
-            <Feedback />
+            <Testimonials />
 
         </section>
     )

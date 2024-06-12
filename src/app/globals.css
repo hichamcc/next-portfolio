@@ -149,3 +149,12 @@ body::-webkit-scrollbar-thumb {
   max-height: 80vw;
 }
 
+.no-visible-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.no-visible-scrollbar::-webkit-scrollbar {
+  display: none;
+}
