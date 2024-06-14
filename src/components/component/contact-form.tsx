@@ -81,7 +81,7 @@ export function ContactForm() {
             </div>
             <div className="space-y-4 ">
               <Label htmlFor="email"></Label>
-              <Input className="text-lg" onChange={handleChange} id="email" placeholder="Email" type="email" />
+              <Input className="text-lg" onChange={handleChange} id="email" placeholder="Email" type="email" required />
             </div>
           </div>
           <div className="space-y-4">
@@ -90,7 +90,7 @@ export function ContactForm() {
           </div>
           <div className="space-y-4">
             <Label htmlFor="message"></Label>
-            <Textarea className="min-h-[100px] text-lg " onChange={handleChange} id="message" placeholder="Enter your message" />
+            <Textarea className="min-h-[100px] text-lg " onChange={handleChange} id="message" placeholder="Enter your message" required />
           </div>
           <Button className="text-lg bg-customBlue hover:border-customBlue hover:border-2 rounded-xl mt-4">Send </Button>
         </div>
