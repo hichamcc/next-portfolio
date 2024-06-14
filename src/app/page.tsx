@@ -15,6 +15,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Lenis from '@studio-freight/lenis'
 import { Project } from '@/components/Project';
+import { Analytics } from "@vercel/analytics/react"
 
 export default function Home() {
   useEffect(() => {
