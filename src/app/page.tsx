@@ -62,7 +62,7 @@ export default function Home() {
 
   return (
     <div >
-
+      <Analytics />
       <Header />
       <Navigation />
       <Hero />
