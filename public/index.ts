@@ -26,6 +26,7 @@ import website_2 from './images/website-2.png';
 import website_3 from './images/website-3.png';
 import website_4 from './images/website-4.png';
 import website_5 from './images/website-5.png';
+import uiartisan from './images/uiartisan.png';
 import google from './images/google.svg';
 import upworksvg from './images/upwork.svg';
 import upwork from './images/upwork.png';
@@ -67,4 +68,5 @@ export {
     website_3,
     website_4,
     website_5,
+    uiartisan
 }
