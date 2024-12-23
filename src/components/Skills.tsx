@@ -21,19 +21,6 @@ import {
     php,
     framer
 } from '../../public';
-import {
-    motion,
-    useScroll,
-    useSpring,
-    useTransform,
-    useMotionValue,
-    useVelocity,
-    useAnimationFrame
-} from "framer-motion";
-import { wrap } from "@motionone/utils";
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-
 
 
 interface YourComponentProps {
