@@ -137,21 +137,21 @@ export function Project() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/80 z-40"
+              className="fixed inset-0 bg-black/80 z-[110] h-[50%]"
               onClick={() => setSelectedId(null)}
             />
             <motion.div
               layoutId={`project-${selectedId}`}
-              className="fixed inset-4 md:inset-20 z-50 bg-gray-900 rounded-xl overflow-hidden"
+              className="fixed inset-4 md:inset-20 z-[120] bg-gray-900 rounded-xl overflow-hidden"
             >
               <motion.div className="relative h-full">
                 {/* Close Button */}
                 <button
                   onClick={() => setSelectedId(null)}
-                  className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                  className="absolute top-4 right-4 z-[120] p-2 rounded-full bg-black/30 hover:bg-black/20 transition-colors"
                 >
                   <svg 
-                    className="w-6 h-6 text-white" 
+                    className="w-6 h-6 text-red-700" 
                     fill="none" 
                     viewBox="0 0 24 24" 
                     stroke="currentColor"
@@ -161,7 +161,7 @@ export function Project() {
                 </button>
 
                 {/* Modal Content */}
-                <div className="h-full overflow-y-auto">
+                <div className=" overflow-y-auto ">
                   {/* Project Details */}
                   <div className="relative aspect-video">
                     <Image
@@ -187,7 +187,7 @@ export function Project() {
                         href={projects[selectedId - 1].link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 transition-colors rounded-full text-white font-medium"
+                        className="hidden  items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 transition-colors rounded-full text-white font-medium"
                       >
                         View Project
                         <svg 
