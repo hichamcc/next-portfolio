@@ -2,13 +2,29 @@
 
 import Image from "next/image";
 import { Tabs } from "./ui/tabs";
-import { website_1, website_2, website_3, website_4, website_5, uiartisan } from '../../public'
+import { website_1, website_2, website_3, website_4, website_5, uiartisan, feedblox } from '../../public'
 import Heading from './Heading'
 
 export function Project() {
     const tabs = [
         {
-            title: "Ui Artisan",
+            title: "Feedblox",
+            value: "Feedblox",
+            content: (
+                <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-customBlue to-blue-300">
+                    <p>Feedblox</p>
+                    <Image
+                        src={feedblox.src}
+                        alt="dummy image"
+                        width="1000"
+                        height="1000"
+                        className="object-cover object-left-top h-[80%]  md:h-[90%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto"
+                    />
+                </div>
+            ),
+        },
+        {
+            title: "UiArtisan",
             value: "Ui artisan",
             content: (
                 <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-customBlue to-blue-300">
@@ -56,7 +72,7 @@ export function Project() {
             ),
         },
         {
-            title: "Memory Archives",
+            title: "MemoryArchives",
             value: "Memory Archives",
             content: (
                 <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-customBlue to-blue-300">
@@ -87,22 +103,7 @@ export function Project() {
                 </div>
             ),
         },
-        {
-            title: "Oasis",
-            value: "Oasis",
-            content: (
-                <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-customBlue to-blue-300">
-                    <p>Oasis</p>
-                    <Image
-                        src={website_5.src}
-                        alt="dummy image"
-                        width="1000"
-                        height="1000"
-                        className="object-cover object-left-top h-[80%]  md:h-[90%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto"
-                    />
-                </div>
-            ),
-        },
+       
     ];
 
     return (

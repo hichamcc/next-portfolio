@@ -10,7 +10,12 @@ function About() {
 
     const introRef = useRef<HTMLInputElement>(null);
 
-
+    const stats = [
+        { number: '5', label: '+ Years Of Experience' },
+        { number: '99', label: '% Client Satisfaction' },
+        { number: '70', label: '+ Completed Projects' }
+      ];
+    
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
         const text = new SplitType('.wrapper-text', { types: "words" });
@@ -55,19 +60,23 @@ function About() {
                         </p>
                     </div>
                 </div>
-                <div className='align-middle flex md:flex-row flex-col w-full  justify-between  text-center sm:mt-32 mt-8 max-w-[90vw]'>
-                    <div className='sm:text-xl text-lg  mb-8  p-4 font-semibold md:w-1/3 w-full'>
-                        <p> <span className='counter text-stroke sm:text-[170px] text-[122px] '>4</span></p>
-                        <p className='bg-black mt-[-38px] relative p-2'>+ Years Of Experience</p>
+              
+                <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-7xl mx-auto px-4 py-8 md:py-16 gap-8">
+                {stats.map((stat, index) => (
+                    <div 
+                    key={index} 
+                    className="w-full md:w-1/3 flex flex-col items-center justify-center text-center mb-8 md:mb-0"
+                    >
+                    <div className="relative">
+                        <span className="counter block text-stroke text-6xl sm:text-8xl md:text-9xl font-bold">
+                        {stat.number}
+                        </span>
+                        <p className="bg-black text-base sm:text-lg md:text-xl font-semibold p-2 relative mt-[-20px] sm:mt-[-30px] md:mt-[-38px] mx-auto inline-block">
+                        {stat.label}
+                        </p>
                     </div>
-                    <div className='sm:text-xl text-lg mb-8 p-4 font-bold md:w-1/3 w-full '>
-                        <p><span className='counter text-stroke sm:text-[170px] text-[122px]'>99</span ></p>
-                        <p className='bg-black mt-[-38px] relative p-2'>% Client Satisfaction</p>
                     </div>
-                    <div className='sm:text-xl text-lg  p-4 font-bold  md:w-1/3 w-full'>
-                        <p><span className='counter text-stroke sm:text-[170px] text-[122px]'>70</span></p>
-                        <p className='bg-black mt-[-38px] relative p-2'>+ Completed Projects</p>
-                    </div>
+                ))}
                 </div>
 
             </div>

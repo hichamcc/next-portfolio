@@ -146,7 +146,7 @@ body::-webkit-scrollbar-thumb {
   width: 600px !important;
   height: 600px !important;
   max-width: 80vw;
-  max-height: 80vw;
+ 
 }
 
 .no-visible-scrollbar {
