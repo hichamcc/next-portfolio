@@ -112,17 +112,7 @@ const Hero = () => {
             });
         });
 
-        gsap.to(".hero", {
-            scrollTrigger: {
-                trigger: ".hero",
-                start: "center 0%",
-                end: "bottom 0%",
-                scrub: 1,
-            },
-            y: -300,
-            duration: 2,
-            ease: 'none'
-        });
+
     }, []);
 
     const scrollToSection = (sectionId: string) => {
@@ -185,15 +175,15 @@ const Hero = () => {
 
                 {/* Joke Display */}
                 <motion.div 
-                    className="absolute bottom-64 left-0 right-0 px-4 z-30"
+                    className="absolute bottom-64  left-0 right-0 px-4 z-30"
                     animate={{ opacity: isJokeVisible ? 1 : 0 }}
                     transition={{ duration: 0.5 }}
                 >
                     <div className="max-w-md mx-auto bg-gray-900/80 backdrop-blur-sm rounded-xl p-6 shadow-xl border border-blue-500/20">
-                        <p className="text-lg font-medium text-blue-400 mb-2">
+                        <p className="text-sm sm:text-lg font-medium text-blue-400 mb-2">
                             {developerJokes[currentJokeIndex].setup}
                         </p>
-                        <p className="text-white">
+                        <p className="text-sm sm:text-lg text-white">
                             {developerJokes[currentJokeIndex].punchline}
                         </p>
                     </div>

@@ -30,6 +30,8 @@ body {
   padding: 0;
   color: var(--light-blue);
   /* background-color: var( --dark-color); */
+  background-color: black;
+
 }
 
 body::before {
