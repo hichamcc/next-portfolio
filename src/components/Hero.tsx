@@ -93,7 +93,7 @@ const Hero = () => {
     };
 
     return (
-        <section className='hero-section relative min-h-screen max-w-screen overflow-hidden'>
+        <section className='hero-section relative min-h-screen max-w-screen overflow-hidden' id="Home">
             <div className="hero absolute w-full hidden md:flex items-center justify-center lg:z-0 z-0">
                 <Spline
                 id="cube"
