@@ -105,7 +105,7 @@ export function Project() {
               alt={project.title}
               width={600}
               height={450}
-              className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+              className="object-contain w-full h-full transition-transform duration-300 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-0 p-6 w-full">

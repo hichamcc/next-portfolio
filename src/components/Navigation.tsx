@@ -42,7 +42,7 @@ const Navigation = () => {
         setMenuOpen(!menuOpen);
     };
     return (
-        <div className='fixed right-0 top-0 z-[100] max-w-[100vw] '>
+        <div className='fixed right-0 top-0 z-[102] max-w-[100vw] '>
             <div className='absolute right-0 max-w-[100vw]'>
                 <button
                     className={`absolute flex flex-col items-center justify-center z-30 right-0 mr-6 mt-6 rounded-full bg-customBlue transition-width transition-height ease-in-out duration-500 ${(showMenu) ? ' w-[60px] h-[60px]' : ' w-0 h-0'}`}

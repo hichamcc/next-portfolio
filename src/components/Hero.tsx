@@ -9,8 +9,7 @@ import {
     useAnimationFrame
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
 
 const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
@@ -66,7 +65,7 @@ const Hero = () => {
         { setup: "Why do programmers prefer dark chocolate?", punchline: "Because it's bitter, like their code reviews!" },
         { setup: "Why did the developer go broke?", punchline: "Because he used up all his cache!" },
         { setup: "How do you comfort a JavaScript bug?", punchline: "You console it!" },
-        { setup: "What did the HTML element say to its parent?", punchline: "I've been <div>orced!" },
+        { setup: "Why do programmers hate to leave their jobs?", punchline: "Because they don’t want to 'commit' to anything else." },
     ];
 
     useEffect(() => {
@@ -81,36 +80,7 @@ const Hero = () => {
     }, [developerJokes.length]);
 
     useEffect(() => {
-        gsap.set('.hero-section', { autoAlpha: 1 });
-        gsap.registerPlugin(ScrollTrigger);
-
-        const mm = gsap.matchMedia();
-
-        mm.add("(min-width: 768px)", () => {
-            gsap.to(".one", {
-                scrollTrigger: {
-                    trigger: ".two",
-                    start: "center 30%",
-                    end: "bottom 0%",
-                    scrub: 1,
-                },
-                x: -300,
-                duration: 2,
-                ease: 'none'
-            });
-
-            gsap.to(".two", {
-                scrollTrigger: {
-                    trigger: ".two",
-                    start: "center 30%",
-                    end: "bottom 0%",
-                    scrub: 1,
-                },
-                x: 300,
-                duration: 2,
-                ease: 'none'
-            });
-        });
+      
 
 
     }, []);
@@ -124,7 +94,7 @@ const Hero = () => {
 
     return (
         <section className='hero-section relative min-h-screen max-w-screen overflow-hidden'>
-            <div className="hero absolute w-full flex items-center justify-center lg:z-0 z-0">
+            <div className="hero absolute w-full hidden md:flex items-center justify-center lg:z-0 z-0">
                 <Spline
                 id="cube"
                     className="w-full h-full max-w-3xl mx-auto transform scale-75 sm:scale-100"
