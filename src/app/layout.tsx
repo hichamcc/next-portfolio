@@ -23,6 +23,8 @@ export default function RootLayout({
         <Toaster />
         <SpeedInsights />
       </body>
+      <script src="http://206.81.7.246:8000/widgets/2/embed.js" async></script>
+
     </html>
   )
 }
