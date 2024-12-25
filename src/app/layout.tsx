@@ -23,8 +23,7 @@ export default function RootLayout({
         <Toaster />
         <SpeedInsights />
       </body>
-      <script src="http://dashboard.feedblox.app/widgets/2/embed.js" async></script>
-
+      <script src="https://dashboard.feedblox.app/widgets/2/embed.js" async></script>
     </html>
   )
 }
