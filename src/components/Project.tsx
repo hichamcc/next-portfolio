@@ -13,7 +13,7 @@ const projects = [
     category: "Full Stack",
     description: "SaaS applicationc for feebdacks and reviews",
     image: feedblox.src,
-    link: "#"
+    link: "https://feedblox.app"
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const projects = [
     category: "Web Design",
     description: "UI component library and design system",
     image: uiartisan.src,
-    link: "#"
+    link: "https://uiartisan.vercel.app/"
   },
   {
     id: 3,
@@ -45,7 +45,7 @@ const projects = [
     category: "Full Stack",
     description: "Digital memory and photo storage",
     image: website_3.src,
-    link: "#"
+    link: "https://www.memoryarchives.world/"
   },
   {
     id: 6,
@@ -117,12 +117,24 @@ export function Project() {
                   {project.title}
                 </motion.h3>
                 <motion.p 
-                  className="text-gray-300"
+                  className="text-gray-300 mb-2"
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                 >
                   {project.description}
                 </motion.p>
+                <motion.a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className=" w-full items-center gap-2 mt-2 px-6 py-1 bg-blue-500 hover:bg-blue-600 transition-colors rounded-full text-white font-small"
+                      >
+                        View Project
+                </motion.a>
+
+                
+
+
               </div>
             </div>
           </motion.div>
@@ -137,7 +149,7 @@ export function Project() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/80 z-[110] h-[50%]"
+              className="fixed inset-0 bg-black/80 z-[110]"
               onClick={() => setSelectedId(null)}
             />
             <motion.div
@@ -169,7 +181,7 @@ export function Project() {
                       alt={projects[selectedId - 1].title}
                       width={1200}
                       height={675}
-                      className="object-cover w-full h-full"
+                      className="object-cover w-full h-auto"
                     />
                   </div>
                   <div className="p-6">
@@ -187,17 +199,10 @@ export function Project() {
                         href={projects[selectedId - 1].link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hidden  items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 transition-colors rounded-full text-white font-medium"
+                        className="d-flex w-full items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 transition-colors rounded-full text-white font-medium"
                       >
                         View Project
-                        <svg 
-                          className="w-4 h-4" 
-                          fill="none" 
-                          viewBox="0 0 24 24" 
-                          stroke="currentColor"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
+                     
                       </a>
                     </div>
                   </div>
