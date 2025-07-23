@@ -85,21 +85,101 @@ const Hero = () => {
 
     }, []);
 
-    const scrollToSection = (sectionId: string) => {
-        const sectionElement = document.getElementById(sectionId);
-        if (sectionElement) {
-            sectionElement.scrollIntoView({ behavior: 'smooth' });
-        }
+    const scrollToSection = async (sectionId: string) => {
+        const { smoothScrollToElement } = await import('@/lib/smooth-scroll');
+        
+        await smoothScrollToElement(sectionId, {
+            duration: 1200,
+            offset: -80
+        });
     };
 
     return (
         <section className='hero-section relative min-h-screen max-w-screen overflow-hidden' id="Home">
+            {/* Desktop 3D Spline */}
             <div className="hero absolute w-full hidden md:flex items-center justify-center lg:z-0 z-0">
                 <Spline
                 id="cube"
                     className="w-full h-full max-w-3xl mx-auto transform scale-75 sm:scale-100"
                     scene="https://prod.spline.design/BYuhXK21qo6bU5Xa/scene.splinecode"
                 />
+            </div>
+
+            {/* Mobile Alternative - Animated Background */}
+            <div className="md:hidden absolute inset-0 flex items-center justify-center z-0">
+                <div className="relative w-80 h-80">
+                    {/* Animated circles */}
+                    <motion.div
+                        className="absolute inset-0 rounded-full border-2 border-blue-500/30"
+                        animate={{
+                            rotate: 360,
+                            scale: [1, 1.1, 1],
+                        }}
+                        transition={{
+                            rotate: { duration: 20, repeat: Infinity, ease: "linear" },
+                            scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+                        }}
+                    />
+                    <motion.div
+                        className="absolute inset-4 rounded-full border-2 border-blue-400/20"
+                        animate={{
+                            rotate: -360,
+                            scale: [1, 0.9, 1],
+                        }}
+                        transition={{
+                            rotate: { duration: 15, repeat: Infinity, ease: "linear" },
+                            scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+                        }}
+                    />
+                    <motion.div
+                        className="absolute inset-8 rounded-full border border-blue-300/15"
+                        animate={{
+                            rotate: 360,
+                            scale: [1, 1.2, 1],
+                        }}
+                        transition={{
+                            rotate: { duration: 25, repeat: Infinity, ease: "linear" },
+                            scale: { duration: 5, repeat: Infinity, ease: "easeInOut" }
+                        }}
+                    />
+                    
+                    {/* Central gradient orb */}
+                    <motion.div
+                        className="absolute inset-16 rounded-full bg-gradient-to-r from-blue-600/20 to-blue-400/30 backdrop-blur-sm"
+                        animate={{
+                            scale: [1, 1.1, 1],
+                            opacity: [0.5, 0.8, 0.5],
+                        }}
+                        transition={{
+                            duration: 4,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }}
+                    />
+
+                    {/* Floating particles */}
+                    {[...Array(6)].map((_, i) => (
+                        <motion.div
+                            key={i}
+                            className="absolute w-2 h-2 bg-blue-400/40 rounded-full"
+                            style={{
+                                left: `${20 + (i * 60) % 240}px`,
+                                top: `${20 + (i * 40) % 240}px`,
+                            }}
+                            animate={{
+                                y: [-10, 10, -10],
+                                x: [-5, 5, -5],
+                                opacity: [0.3, 0.8, 0.3],
+                            }}
+                            transition={{
+                                duration: 3 + i * 0.5,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                                delay: i * 0.5,
+                            }}
+                        />
+                    ))}
+                </div>
             </div>
 
             <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 sm:pt-64'>

@@ -7,12 +7,14 @@ const Navigation = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
 
-    const scrollToSection = (sectionId: string) => {
-        const sectionElement = document.getElementById(sectionId);
-        if (sectionElement) {
-            sectionElement.scrollIntoView({ behavior: 'smooth' });
-            setMenuOpen(false);
-        }
+    const scrollToSection = async (sectionId: string) => {
+        const { smoothScrollToElement } = await import('@/lib/smooth-scroll');
+        setMenuOpen(false);
+        
+        await smoothScrollToElement(sectionId, {
+            duration: 1200,
+            offset: -80
+        });
     };
 
     useEffect(() => {

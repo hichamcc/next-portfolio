@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { website_1, website_2, website_3, website_4, uiartisan, feedblox } from '../../public';
+import { website_1, website_2, website_3, website_4, uiartisan, feedblox, costmeet } from '../../public';
 import Heading from './Heading';
 
 const projects = [
@@ -25,11 +25,11 @@ const projects = [
   },
   {
     id: 3,
-    title: "JobZilla",
-    category: "Full Stack",
-    description: "Job search and career platform",
-    image: website_1.src,
-    link: "#"
+    title: "CostMeet",
+    category: "Web App",
+    description: "Meeting cost calculator for efficient time management",
+    image: costmeet.src,
+    link: "https://costmeet.com"
   },
   {
     id: 4,
@@ -49,10 +49,10 @@ const projects = [
   },
   {
     id: 6,
-    title: "BizJotter",
-    category: "Web App",
-    description: "Business name generating application",
-    image: website_4.src,
+    title: "JobZilla",
+    category: "Full Stack",
+    description: "Job search and career platform",
+    image: website_1.src,
     link: "#"
   }
 ];
@@ -106,6 +106,10 @@ export function Project() {
               width={600}
               height={450}
               className="object-contain w-full h-full transition-transform duration-300 group-hover:scale-105"
+              priority={project.id <= 3}
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="absolute bottom-0 p-6 w-full">
@@ -141,73 +145,141 @@ export function Project() {
         ))}
       </div>
 
-      {/* Modal */}
+      {/* Enhanced Modal */}
       <AnimatePresence>
         {selectedId && (
           <>
+            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/80 z-[110]"
+              className="fixed inset-0 bg-black/90 backdrop-blur-sm z-[110]"
               onClick={() => setSelectedId(null)}
             />
+            
+            {/* Modal Container */}
             <motion.div
-              layoutId={`project-${selectedId}`}
-              className="fixed inset-4 md:inset-20 z-[120] bg-gray-900 rounded-xl overflow-hidden"
+              initial={{ opacity: 0, scale: 0.8, y: 50 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.8, y: 50 }}
+              transition={{ type: "spring", duration: 0.5 }}
+              className="fixed inset-4 md:inset-8 lg:inset-16 z-[120] bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700"
             >
-              <motion.div className="relative h-full">
-                {/* Close Button */}
-                <button
-                  onClick={() => setSelectedId(null)}
-                  className="absolute top-4 right-4 z-[120] p-2 rounded-full bg-black/30 hover:bg-black/20 transition-colors"
-                >
-                  <svg 
-                    className="w-6 h-6 text-red-700" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-
-                {/* Modal Content */}
-                <div className=" overflow-y-auto ">
-                  {/* Project Details */}
-                  <div className="relative aspect-video">
-                    <Image
-                      src={projects[selectedId - 1].image}
-                      alt={projects[selectedId - 1].title}
-                      width={1200}
-                      height={675}
-                      className="object-cover w-full h-auto"
-                    />
+              <div className="relative h-full flex flex-col">
+                {/* Header */}
+                <div className="flex items-center justify-between p-4 md:p-6 bg-gray-800/50 backdrop-blur-sm border-b border-gray-700">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
                   </div>
-                  <div className="p-6">
-                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                      {projects[selectedId - 1].title}
-                    </h2>
-                    <p className="text-blue-400 mb-4">
-                      {projects[selectedId - 1].category}
-                    </p>
-                    <p className="text-gray-300 text-lg leading-relaxed">
-                      {projects[selectedId - 1].description}
-                    </p>
-                    <div className="mt-6">
-                      <a
-                        href={projects[selectedId - 1].link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="d-flex w-full items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 transition-colors rounded-full text-white font-medium"
-                      >
-                        View Project
-                     
-                      </a>
+                  <button
+                    onClick={() => setSelectedId(null)}
+                    className="p-2 rounded-full bg-gray-700/50 hover:bg-gray-600/50 transition-colors group"
+                  >
+                    <svg 
+                      className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 overflow-y-auto">
+                  <div className="grid lg:grid-cols-2 gap-0 h-full">
+                    {/* Image Section */}
+                    <div className="relative bg-gray-800 flex items-center justify-center p-4 md:p-8">
+                      <div className="relative w-full max-w-md lg:max-w-none">
+                        <Image
+                          src={projects[selectedId - 1].image}
+                          alt={projects[selectedId - 1].title}
+                          width={600}
+                          height={400}
+                          className="object-contain w-full h-auto rounded-lg shadow-lg"
+                          priority
+                          placeholder="blur"
+                          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                        />
+                        {/* Decorative elements */}
+                        <div className="absolute -top-2 -left-2 w-4 h-4 border-l-2 border-t-2 border-blue-400 rounded-tl-lg"></div>
+                        <div className="absolute -top-2 -right-2 w-4 h-4 border-r-2 border-t-2 border-blue-400 rounded-tr-lg"></div>
+                        <div className="absolute -bottom-2 -left-2 w-4 h-4 border-l-2 border-b-2 border-blue-400 rounded-bl-lg"></div>
+                        <div className="absolute -bottom-2 -right-2 w-4 h-4 border-r-2 border-b-2 border-blue-400 rounded-br-lg"></div>
+                      </div>
+                    </div>
+
+                    {/* Details Section */}
+                    <div className="p-6 md:p-8 lg:p-10 flex flex-col justify-between">
+                      <div className="space-y-6">
+                        {/* Title and Category */}
+                        <div>
+                          <div className="flex items-center space-x-3 mb-3">
+                            <span className="px-3 py-1 text-xs font-semibold bg-blue-500/20 text-blue-400 rounded-full border border-blue-500/30">
+                              {projects[selectedId - 1].category}
+                            </span>
+                            <div className="flex-1 h-px bg-gradient-to-r from-blue-500/50 to-transparent"></div>
+                          </div>
+                          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-4">
+                            {projects[selectedId - 1].title}
+                          </h2>
+                        </div>
+
+                        {/* Description */}
+                        <div className="space-y-4">
+                          <h3 className="text-lg font-semibold text-blue-400">About This Project</h3>
+                          <p className="text-gray-300 leading-relaxed text-base md:text-lg">
+                            {projects[selectedId - 1].description}
+                          </p>
+                        </div>
+
+                        {/* Technologies (placeholder for future enhancement) */}
+                        <div className="space-y-3">
+                          <h3 className="text-lg font-semibold text-blue-400">Key Features</h3>
+                          <div className="flex flex-wrap gap-2">
+                            {['Responsive Design', 'Modern UI', 'Performance Optimized'].map((feature, index) => (
+                              <span key={index} className="px-3 py-1 text-sm bg-gray-700/50 text-gray-300 rounded-md border border-gray-600">
+                                {feature}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Actions */}
+                      <div className="pt-6 space-y-4">
+                        <div className="flex flex-col sm:flex-row gap-3">
+                          <motion.a
+                            href={projects[selectedId - 1].link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 transition-all duration-300 rounded-lg text-white font-semibold shadow-lg hover:shadow-blue-500/25"
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                          >
+                            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                            Visit Project
+                          </motion.a>
+                          <motion.button
+                            onClick={() => setSelectedId(null)}
+                            className="px-6 py-3 bg-gray-700/50 hover:bg-gray-600/50 transition-colors rounded-lg text-gray-300 font-medium border border-gray-600 hover:border-gray-500"
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                          >
+                            Close
+                          </motion.button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </motion.div>
           </>
         )}

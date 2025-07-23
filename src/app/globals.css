@@ -23,6 +23,17 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced smooth scrolling with reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   font-family: 'Supreme-Medium';
   overflow-x: hidden !important;

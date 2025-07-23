@@ -28,6 +28,7 @@ import website_4 from './images/website-4.png';
 import website_5 from './images/website-5.png';
 import uiartisan from './images/uiartisan.png';
 import feedblox from './images/feedblox.png';
+import costmeet from './images/Meeting-Cost-Calculator-website.png';
 
 import google from './images/google.svg';
 import upworksvg from './images/upwork.svg';
@@ -71,5 +72,6 @@ export {
     website_4,
     website_5,
     uiartisan,
-    feedblox
+    feedblox,
+    costmeet
 }

@@ -1,18 +1,28 @@
 import React from 'react'
 import { motion } from "framer-motion"
+import { smoothScrollToElement } from '@/lib/smooth-scroll'
+
 interface NavProps {
-    toggleMenu: () => void; // Adjust the type based on your actual function signature
+    toggleMenu: () => void;
 }
 
 const Nav: React.FC<NavProps> = ({ toggleMenu }) => {
 
-    const sections = ['Home', 'About', 'Skills', 'Projects', 'Contact'];
-    const scrollToSection = (sectionId: string) => {
-        const sectionElement = document.getElementById(sectionId);
-        if (sectionElement) {
-            sectionElement.scrollIntoView({ behavior: 'smooth' });
-            toggleMenu();
-        }
+    const sections = ['Home', 'About', 'Skills', 'Projects', 'Pricing', 'Contact'];
+    
+    const scrollToSection = async (sectionId: string) => {
+        toggleMenu(); // Close menu immediately for better UX
+        
+        // Wait a bit for menu close animation, then scroll
+        setTimeout(async () => {
+            await smoothScrollToElement(sectionId, {
+                duration: 1200,
+                offset: -80,
+                onComplete: () => {
+                    // Optional: Add any completion logic here
+                }
+            });
+        }, 300);
     };
     const slide = {
         initial: {
