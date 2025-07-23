@@ -62,10 +62,10 @@ const Hero = () => {
 
     const developerJokes = [
         { setup: "Why do programmers prefer dark mode?", punchline: "Because light attracts bugs!" },
-        { setup: "Why do programmers prefer dark chocolate?", punchline: "Because it's bitter, like their code reviews!" },
+        { setup: "Why do programmers prefer dark chocolate?", punchline: "Because it&apos;s bitter, like their code reviews!" },
         { setup: "Why did the developer go broke?", punchline: "Because he used up all his cache!" },
         { setup: "How do you comfort a JavaScript bug?", punchline: "You console it!" },
-        { setup: "Why do programmers hate to leave their jobs?", punchline: "Because they don’t want to 'commit' to anything else." },
+        { setup: "Why do programmers hate to leave their jobs?", punchline: "Because they don&apos;t want to &apos;commit&apos; to anything else." },
     ];
 
     useEffect(() => {

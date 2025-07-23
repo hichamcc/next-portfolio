@@ -146,7 +146,7 @@ const Pricing = () => {
               </div>
 
               <div className="space-y-4 mb-8">
-                <h4 className="font-semibold text-blue-400 mb-4">What's Included:</h4>
+                <h4 className="font-semibold text-blue-400 mb-4">What&apos;s Included:</h4>
                 {pkg.features.map((feature, index) => (
                   <motion.div
                     key={index}
@@ -195,7 +195,7 @@ const Pricing = () => {
             <p className="text-gray-300 mb-6 leading-relaxed">
               Every project is unique. These are starting prices for standard implementations. 
               Complex features, integrations, or custom requirements may adjust the final quote. 
-              Let's discuss your specific needs!
+              Let&apos;s discuss your specific needs!
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

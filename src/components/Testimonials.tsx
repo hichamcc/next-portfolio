@@ -25,7 +25,7 @@ const testimonials = [
         title: "",
     },
     {
-        quote: "Hicham is by FAR the most skilled developer I've worked with. I was in a rush and he very well understood the assignment and right away started developing. Great communication skills, and he was always available for any needs",
+        quote: "Hicham is by FAR the most skilled developer I&apos;ve worked with. I was in a rush and he very well understood the assignment and right away started developing. Great communication skills, and he was always available for any needs",
 
         name: "UpWork Client",
         title: "",
