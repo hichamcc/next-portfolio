@@ -5,16 +5,18 @@ import Link from 'next/link';
 import { gsap } from 'gsap';
 import { useGSAP } from "@gsap/react";
 
-const sections = ['Home', 'About', 'Skills', 'Projects', 'Contact'];
+const sections = ['Home', 'About', 'Skills', 'Projects', 'Pricing', 'Contact'];
 
 const Header = () => {
 
 
-    const scrollToSection = (sectionId: string) => {
-        const sectionElement = document.getElementById(sectionId);
-        if (sectionElement) {
-            sectionElement.scrollIntoView({ behavior: 'smooth' });
-        }
+    const scrollToSection = async (sectionId: string) => {
+        const { smoothScrollToElement } = await import('@/lib/smooth-scroll');
+        
+        await smoothScrollToElement(sectionId, {
+            duration: 1200,
+            offset: -80
+        });
     };
 
     const app = useRef<HTMLInputElement>(null);

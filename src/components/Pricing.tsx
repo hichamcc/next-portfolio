@@ -135,10 +135,10 @@ const Pricing = () => {
                   {pkg.title}
                 </h3>
                 <div className="mb-4">
+                  <span className="text-gray-400 mr-2">starting at</span>
                   <span className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">
                     {pkg.price}
                   </span>
-                  <span className="text-gray-400 ml-2">starting at</span>
                 </div>
                 <p className="text-gray-300 leading-relaxed">
                   {pkg.description}
