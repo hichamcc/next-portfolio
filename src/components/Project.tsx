@@ -3,17 +3,17 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { website_1, website_2, website_3, website_4, uiartisan, feedblox, costmeet } from '../../public';
+import { website_1, website_2, website_3, website_4, uiartisan, feedblox, costmeet, trueform, bsncard, sge } from '../../public';
 import Heading from './Heading';
 
 const projects = [
   {
     id: 1,
-    title: "Feedblox",
+    title: "True Form Elite",
     category: "Full Stack",
-    description: "SaaS applicationc for feebdacks and reviews",
-    image: feedblox.src,
-    link: "https://feedblox.app"
+    description: "90-day transformation fitness and nutrition platform",
+    image: trueform.src,
+    link: "https://app.trueformnutrition.com.au/"
   },
   {
     id: 2,
@@ -33,11 +33,11 @@ const projects = [
   },
   {
     id: 4,
-    title: "FitForma",
+    title: "BsnCard",
     category: "Web App",
-    description: "Fitness tracking and workout planning",
-    image: website_2.src,
-    link: "#"
+    description: "Digital business cards and networking CRM platform",
+    image: bsncard.src,
+    link: "https://bsncard.com/"
   },
   {
     id: 5,
@@ -49,11 +49,11 @@ const projects = [
   },
   {
     id: 6,
-    title: "JobZilla",
+    title: "SGE Prime Contracting",
     category: "Full Stack",
-    description: "Job search and career platform",
-    image: website_1.src,
-    link: "#"
+    description: "General contracting and civil construction company in Cochrane, Alberta",
+    image: sge.src,
+    link: "https://sgeltd.ca/"
   }
 ];
 

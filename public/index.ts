@@ -29,6 +29,9 @@ import website_5 from './images/website-5.png';
 import uiartisan from './images/uiartisan.png';
 import feedblox from './images/feedblox.png';
 import costmeet from './images/Meeting-Cost-Calculator-website.png';
+import trueform from './images/True-Form-Elite-90-Day-Transformation-website-1.png';
+import bsncard from './images/BsnCard-Digital-Business-Cards-Networking-CRM.png';
+import sge from './images/SGE-Prime-Contracting-—-General-Contracting-Civil-Construction-Cochrane-Alberta.png';
 
 import google from './images/google.svg';
 import upworksvg from './images/upwork.svg';
@@ -73,5 +76,8 @@ export {
     website_5,
     uiartisan,
     feedblox,
-    costmeet
+    costmeet,
+    trueform,
+    bsncard,
+    sge
 }

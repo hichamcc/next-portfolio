@@ -224,8 +224,8 @@ const Hero = () => {
                 </div>
 
                 {/* Joke Display */}
-                <motion.div 
-                    className="absolute bottom-64  left-0 right-0 px-4 z-30"
+                <motion.div
+                    className="absolute bottom-64  left-0 right-0 px-4 z-30 hidden sm:block"
                     animate={{ opacity: isJokeVisible ? 1 : 0 }}
                     transition={{ duration: 0.5 }}
                 >
