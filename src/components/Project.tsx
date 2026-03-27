@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { website_1, website_2, website_3, website_4, uiartisan, feedblox, costmeet, trueform, bsncard, sge } from '../../public';
+import { website_1, website_2, website_3, website_4, uiartisan, feedblox, costmeet, trueform, bsncard, sge, contentops } from '../../public';
 import Heading from './Heading';
 
 const projects = [
@@ -41,11 +41,11 @@ const projects = [
   },
   {
     id: 5,
-    title: "MemoryArchives",
-    category: "Full Stack",
-    description: "Digital memory and photo storage",
-    image: website_3.src,
-    link: "https://www.memoryarchives.world/"
+    title: "ContentOps",
+    category: "Web App",
+    description: "Project management dashboard for content operations",
+    image: contentops.src,
+    link: "#"
   },
   {
     id: 6,

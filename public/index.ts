@@ -32,6 +32,7 @@ import costmeet from './images/Meeting-Cost-Calculator-website.png';
 import trueform from './images/True-Form-Elite-90-Day-Transformation-website-1.png';
 import bsncard from './images/BsnCard-Digital-Business-Cards-Networking-CRM.png';
 import sge from './images/SGE-Prime-Contracting-—-General-Contracting-Civil-Construction-Cochrane-Alberta.png';
+import contentops from './images/ContentOps-—-Project-Management-Dashboard.png';
 
 import google from './images/google.svg';
 import upworksvg from './images/upwork.svg';
@@ -79,5 +80,6 @@ export {
     costmeet,
     trueform,
     bsncard,
-    sge
+    sge,
+    contentops
 }
