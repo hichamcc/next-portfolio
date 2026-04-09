@@ -57,37 +57,10 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
 }
 
 const Hero = () => {
-    const [currentJokeIndex, setCurrentJokeIndex] = useState(0);
-    const [isJokeVisible, setIsJokeVisible] = useState(true);
-
-    const developerJokes = [
-        { setup: "Why do programmers prefer dark mode?", punchline: "Because light attracts bugs!" },
-        { setup: "Why do programmers prefer dark chocolate?", punchline: "Because it&apos;s bitter, like their code reviews!" },
-        { setup: "Why did the developer go broke?", punchline: "Because he used up all his cache!" },
-        { setup: "How do you comfort a JavaScript bug?", punchline: "You console it!" },
-        { setup: "Why do programmers hate to leave their jobs?", punchline: "Because they don&apos;t want to &apos;commit&apos; to anything else." },
-    ];
-
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setIsJokeVisible(false);
-            setTimeout(() => {
-                setCurrentJokeIndex((prevIndex) => (prevIndex + 1) % developerJokes.length);
-                setIsJokeVisible(true);
-            }, 500);
-        }, 8000);
-        return () => clearInterval(intervalId);
-    }, [developerJokes.length]);
-
-    useEffect(() => {
-      
-
-
-    }, []);
 
     const scrollToSection = async (sectionId: string) => {
         const { smoothScrollToElement } = await import('@/lib/smooth-scroll');
-        
+
         await smoothScrollToElement(sectionId, {
             duration: 1200,
             offset: -80
@@ -142,7 +115,7 @@ const Hero = () => {
                             scale: { duration: 5, repeat: Infinity, ease: "easeInOut" }
                         }}
                     />
-                    
+
                     {/* Central gradient orb */}
                     <motion.div
                         className="absolute inset-16 rounded-full bg-gradient-to-r from-blue-600/20 to-blue-400/30 backdrop-blur-sm"
@@ -184,7 +157,7 @@ const Hero = () => {
 
             <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 sm:pt-64'>
                 <div className='grid md:grid-cols-2 gap-8 items-center  z-50'>
-                    <motion.div 
+                    <motion.div
                         className='one space-y-6'
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -207,8 +180,8 @@ const Hero = () => {
                         </button>
                     </motion.div>
 
-                    <motion.div 
-                        className='two text-right space-y-2 pt-32 sm:pt-0' 
+                    <motion.div
+                        className='two text-right space-y-2 pt-32 sm:pt-0'
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
@@ -219,25 +192,14 @@ const Hero = () => {
                             <h2 className='relative z-50 text-4xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-customBlue to-blue-300'>
                                 DEVELOPER
                             </h2>
-                     
+                            <h2 className='relative z-50 text-2xl sm:text-4xl font-bold text-gray-400'>
+                                &amp; AUTOMATION
+                            </h2>
+                            <h2 className='relative z-50 text-2xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-customBlue to-blue-300'>
+                                EXPERT
+                            </h2>
                     </motion.div>
                 </div>
-
-                {/* Joke Display */}
-                <motion.div
-                    className="absolute bottom-64  left-0 right-0 px-4 z-30 hidden sm:block"
-                    animate={{ opacity: isJokeVisible ? 1 : 0 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    <div className="max-w-md mx-auto bg-gray-900/80 backdrop-blur-sm rounded-xl p-6 shadow-xl border border-blue-500/20">
-                        <p className="text-sm sm:text-lg font-medium text-blue-400 mb-2">
-                            {developerJokes[currentJokeIndex].setup}
-                        </p>
-                        <p className="text-sm sm:text-lg text-white">
-                            {developerJokes[currentJokeIndex].punchline}
-                        </p>
-                    </div>
-                </motion.div>
 
                 <div className='absolute bottom-16 left-0 right-0 w-full'>
                     <ParallaxText baseVelocity={-1}>Transforming Ideas into Reality -</ParallaxText>

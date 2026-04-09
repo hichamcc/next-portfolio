@@ -52,6 +52,11 @@ const Skills: React.FC<YourComponentProps> = ({ container, texts, newRadius }) =
             name: 'Business Process Streamlining',
             icon: process,
             description: 'Efficiently streamline and automate key business processes for enhanced productivity.',
+        },
+        {
+            name: 'Workflow Automation',
+            icon: api,
+            description: 'Build n8n and API-driven automations that connect your tools, eliminate manual work, and scale your operations.',
         }
     ];
 

@@ -8,7 +8,7 @@ interface NavProps {
 
 const Nav: React.FC<NavProps> = ({ toggleMenu }) => {
 
-    const sections = ['Home', 'About', 'Skills', 'Projects', 'Pricing', 'Contact'];
+    const sections = ['Home', 'About', 'Skills', 'Projects', 'Automation', 'Process', 'Pricing', 'Contact'];
     
     const scrollToSection = async (sectionId: string) => {
         toggleMenu(); // Close menu immediately for better UX

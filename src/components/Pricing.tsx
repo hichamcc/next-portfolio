@@ -53,6 +53,22 @@ const Pricing = () => {
       ],
       highlight: false,
       icon: '🚀'
+    },
+    {
+      id: 4,
+      title: 'Business Automation',
+      price: '$800',
+      description: 'n8n & API workflows that eliminate repetitive tasks and connect your tools',
+      features: [
+        'n8n Workflow Design',
+        'CRM & Lead Automation',
+        'Email & Notification Flows',
+        'Cross-App Integrations',
+        'Data Sync Pipelines',
+        'AI-Powered Automation'
+      ],
+      highlight: false,
+      icon: '⚡'
     }
   ];
 
@@ -101,7 +117,7 @@ const Pricing = () => {
         </motion.div>
 
         <motion.div 
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

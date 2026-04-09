@@ -12,6 +12,8 @@ import Hero from '@/components/Hero';
 import ScrollProgress from '@/components/ScrollProgress';
 import BackToTop from '@/components/BackToTop';
 import Pricing from '@/components/Pricing';
+import Automation from '@/components/Automation';
+import Process from '@/components/Process';
 
 import { Project } from '@/components/Project';
 import { Analytics } from "@vercel/analytics/react"
@@ -36,6 +38,8 @@ export default function Home() {
       <About />
       <Skills container={''} texts={[]} newRadius={0} />
       <Project />
+      <Automation />
+      <Process />
       <Pricing />
       <Contact />
       <Footer />
