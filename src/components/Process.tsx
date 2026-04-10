@@ -11,7 +11,7 @@ const steps = [
     title: 'Discovery',
     subtitle: 'Understand before building',
     description:
-      "We kick off with a focused call where I learn about your business, your goals, and your biggest pain points. No templates — I ask the right questions so the solution actually fits.",
+      "We kick off with a focused call where I learn about your business, your goals, and your biggest pain points. No templates. I ask the right questions so the solution actually fits.",
     details: ['Goals & requirements scoping', 'Timeline & budget alignment', 'Tech stack recommendation', 'Clear project roadmap'],
     icon: <MagnifyingGlassIcon className="w-7 h-7" />,
   },
@@ -20,7 +20,7 @@ const steps = [
     title: 'Build',
     subtitle: 'Ship fast, iterate together',
     description:
-      "I design and develop in short cycles, sharing progress early and often. You get visibility without micromanaging — weekly updates, a staging link you can click, and a direct line to me.",
+      "I design and develop in short cycles, sharing progress early and often. You get visibility without micromanaging: weekly updates, a staging link you can click, and a direct line to me.",
     details: ['Design mockups for approval', 'Iterative development sprints', 'Weekly progress updates', 'Staging environment access'],
     icon: <CodeBracketIcon className="w-7 h-7" />,
   },
