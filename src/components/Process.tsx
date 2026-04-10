@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { MagnifyingGlassIcon, CodeBracketIcon, BoltIcon } from '@heroicons/react/24/outline';
 import Heading from './Heading';
 
 const steps = [
@@ -12,11 +13,7 @@ const steps = [
     description:
       "We kick off with a focused call where I learn about your business, your goals, and your biggest pain points. No templates — I ask the right questions so the solution actually fits.",
     details: ['Goals & requirements scoping', 'Timeline & budget alignment', 'Tech stack recommendation', 'Clear project roadmap'],
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-      </svg>
-    ),
+    icon: <MagnifyingGlassIcon className="w-7 h-7" />,
   },
   {
     number: '02',
@@ -25,11 +22,7 @@ const steps = [
     description:
       "I design and develop in short cycles, sharing progress early and often. You get visibility without micromanaging — weekly updates, a staging link you can click, and a direct line to me.",
     details: ['Design mockups for approval', 'Iterative development sprints', 'Weekly progress updates', 'Staging environment access'],
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-      </svg>
-    ),
+    icon: <CodeBracketIcon className="w-7 h-7" />,
   },
   {
     number: '03',
@@ -38,11 +31,7 @@ const steps = [
     description:
       "Go-live is a milestone, not the end. I handle deployment, run final QA, and stay available post-launch to squash any issues fast. You get a handover doc and optional ongoing support.",
     details: ['Production deployment', 'Final QA & performance check', '30-day post-launch support', 'Handover documentation'],
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
+    icon: <BoltIcon className="w-7 h-7" />,
   },
 ];
 
@@ -69,7 +58,7 @@ const Process = () => {
       {/* Steps */}
       <div className="relative">
         {/* Connecting line — desktop */}
-        <div className="hidden lg:block absolute top-16 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
+        <div className="hidden lg:block absolute top-16 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-600/40 to-transparent" />
 
         <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
           {steps.map((step, index) => (
@@ -83,27 +72,27 @@ const Process = () => {
             >
               {/* Number + icon row */}
               <div className="flex items-center gap-4 mb-6">
-                <div className="relative flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-blue-600 to-blue-400 flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
+                <div className="relative flex-shrink-0 w-14 h-14 rounded-xl bg-gray-800 border border-gray-700 flex items-center justify-center text-white">
                   {step.icon}
                   {/* Step number badge */}
-                  <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-gray-900 border border-blue-500 text-blue-400 text-xs font-bold flex items-center justify-center">
+                  <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-gray-900 border border-gray-600 text-gray-400 text-xs font-bold flex items-center justify-center">
                     {index + 1}
                   </span>
                 </div>
                 <div>
-                  <p className="text-blue-400 text-sm font-semibold uppercase tracking-widest">{step.number}</p>
+                  <p className="text-gray-500 text-sm font-semibold uppercase tracking-widest">{step.number}</p>
                   <h3 className="text-2xl font-bold text-white">{step.title}</h3>
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-700 hover:border-blue-500/40 transition-all duration-300">
-                <p className="text-blue-300 font-medium mb-3">{step.subtitle}</p>
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300">
+                <p className="text-gray-300 font-medium mb-3">{step.subtitle}</p>
                 <p className="text-gray-400 leading-relaxed mb-6">{step.description}</p>
 
                 <ul className="space-y-2">
                   {step.details.map((detail, i) => (
                     <li key={i} className="flex items-center gap-3 text-gray-300 text-sm">
-                      <span className="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-gray-500 flex-shrink-0" />
                       {detail}
                     </li>
                   ))}

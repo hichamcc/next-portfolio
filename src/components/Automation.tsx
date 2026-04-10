@@ -3,36 +3,44 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import {
+  LinkIcon,
+  EnvelopeIcon,
+  ChartBarIcon,
+  ShoppingCartIcon,
+  CpuChipIcon,
+  ArrowPathIcon,
+} from '@heroicons/react/24/outline';
 import Heading from './Heading';
 
 const automationUseCases = [
   {
-    icon: '🔗',
+    icon: <LinkIcon className="w-7 h-7" />,
     title: 'CRM & Lead Automation',
     description: 'Auto-capture leads from forms, sync to your CRM, and trigger personalized follow-up sequences without lifting a finger.',
   },
   {
-    icon: '📧',
+    icon: <EnvelopeIcon className="w-7 h-7" />,
     title: 'Email & Notification Workflows',
     description: 'Set up smart email campaigns, Slack alerts, and SMS notifications triggered by user actions or data changes.',
   },
   {
-    icon: '📊',
+    icon: <ChartBarIcon className="w-7 h-7" />,
     title: 'Data Sync & Reporting',
     description: 'Connect databases, spreadsheets, and APIs to keep your data in sync and generate automated reports on schedule.',
   },
   {
-    icon: '🛒',
+    icon: <ShoppingCartIcon className="w-7 h-7" />,
     title: 'E-Commerce & Payments',
     description: 'Automate order processing, invoice generation, inventory updates, and payment confirmation workflows.',
   },
   {
-    icon: '🤖',
+    icon: <CpuChipIcon className="w-7 h-7" />,
     title: 'AI-Powered Pipelines',
     description: 'Integrate AI models to classify, summarize, or respond to content — automatically routed through your business logic.',
   },
   {
-    icon: '🔄',
+    icon: <ArrowPathIcon className="w-7 h-7" />,
     title: 'Cross-App Integrations',
     description: 'Connect 400+ tools — Airtable, Notion, HubSpot, Stripe, Google Sheets — into one seamless automated system.',
   },
@@ -66,8 +74,8 @@ const Automation = () => {
       >
         <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
           Stop wasting time on repetitive tasks. I build custom automation workflows using{' '}
-          <span className="text-blue-400 font-semibold">n8n</span>,{' '}
-          <span className="text-blue-400 font-semibold">Make</span>, and custom APIs — so your business
+          <span className="font-semibold text-white">n8n</span>,{' '}
+          <span className="font-semibold text-white">Make</span>, and custom APIs — so your business
           runs on autopilot while you focus on growth.
         </p>
       </motion.div>
@@ -127,9 +135,9 @@ const Automation = () => {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
             whileHover={{ y: -5 }}
-            className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300"
+            className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300"
           >
-            <div className="text-3xl mb-4">{useCase.icon}</div>
+            <div className="text-white mb-4">{useCase.icon}</div>
             <h3 className="text-xl font-bold text-white mb-3">{useCase.title}</h3>
             <p className="text-gray-400 leading-relaxed">{useCase.description}</p>
           </motion.div>

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { ExclamationCircleIcon, LightBulbIcon } from '@heroicons/react/24/outline';
 import { uiartisan, costmeet, trueform, bsncard, sge, contentops } from '../../public';
 import Heading from './Heading';
 
@@ -204,9 +205,9 @@ export function Project() {
                 <div className="flex items-center justify-between p-4 md:p-6 bg-gray-800/50 backdrop-blur-sm border-b border-gray-700 flex-shrink-0">
                   <div className="flex items-center gap-6">
                     <div className="flex items-center space-x-3">
-                      <div className="w-3 h-3 rounded-full bg-red-500" />
-                      <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                      <div className="w-3 h-3 rounded-full bg-green-500" />
+                      <div className="w-3 h-3 rounded-full bg-gray-600" />
+                      <div className="w-3 h-3 rounded-full bg-gray-600" />
+                      <div className="w-3 h-3 rounded-full bg-gray-600" />
                     </div>
                     <div className="flex gap-1">
                       <button
@@ -370,14 +371,10 @@ export function Project() {
                             {/* Challenge */}
                             <div className="space-y-3">
                               <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center flex-shrink-0">
-                                  <svg className="w-4 h-4 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01M12 3a9 9 0 100 18A9 9 0 0012 3z" />
-                                  </svg>
-                                </div>
+                                <ExclamationCircleIcon className="w-6 h-6 text-white flex-shrink-0" />
                                 <h3 className="text-xl font-bold text-white">The Challenge</h3>
                               </div>
-                              <p className="text-gray-300 leading-relaxed pl-11">
+                              <p className="text-gray-300 leading-relaxed pl-9">
                                 {selectedProject.caseStudy.challenge}
                               </p>
                             </div>
@@ -385,21 +382,17 @@ export function Project() {
                             {/* Solution */}
                             <div className="space-y-3">
                               <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-                                  <svg className="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m1.636-6.364l.707.707M6 18l1-1M18 18l-1-1M12 21v-1" />
-                                  </svg>
-                                </div>
+                                <LightBulbIcon className="w-6 h-6 text-white flex-shrink-0" />
                                 <h3 className="text-xl font-bold text-white">The Solution</h3>
                               </div>
-                              <p className="text-gray-300 leading-relaxed pl-11">
+                              <p className="text-gray-300 leading-relaxed pl-9">
                                 {selectedProject.caseStudy.solution}
                               </p>
                             </div>
 
                             {/* Stack */}
                             <div className="space-y-3">
-                              <h3 className="text-lg font-semibold text-blue-400">Tech Stack</h3>
+                              <h3 className="text-lg font-semibold text-gray-300">Tech Stack</h3>
                               <div className="flex flex-wrap gap-2">
                                 {selectedProject.caseStudy.stack.map((tech, i) => (
                                   <span key={i} className="px-3 py-1.5 text-sm bg-gray-700/50 text-gray-200 rounded-lg border border-gray-600">

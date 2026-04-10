@@ -2,6 +2,12 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import {
+  GlobeAltIcon,
+  ChartBarIcon,
+  RocketLaunchIcon,
+  BoltIcon,
+} from '@heroicons/react/24/outline';
 import Heading from './Heading';
 
 const Pricing = () => {
@@ -20,7 +26,7 @@ const Pricing = () => {
         'Mobile First'
       ],
       highlight: false,
-      icon: '🌐'
+      icon: <GlobeAltIcon className="w-8 h-8" />,
     },
     {
       id: 2,
@@ -36,7 +42,7 @@ const Pricing = () => {
         'Responsive Design'
       ],
       highlight: true,
-      icon: '📊'
+      icon: <ChartBarIcon className="w-8 h-8" />,
     },
     {
       id: 3,
@@ -52,7 +58,7 @@ const Pricing = () => {
         'Cloud Deployment'
       ],
       highlight: false,
-      icon: '🚀'
+      icon: <RocketLaunchIcon className="w-8 h-8" />,
     },
     {
       id: 4,
@@ -68,7 +74,7 @@ const Pricing = () => {
         'AI-Powered Automation'
       ],
       highlight: false,
-      icon: '⚡'
+      icon: <BoltIcon className="w-8 h-8" />,
     }
   ];
 
@@ -83,13 +89,13 @@ const Pricing = () => {
   };
 
   const cardVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 50,
       scale: 0.9
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       scale: 1,
       transition: {
@@ -102,9 +108,9 @@ const Pricing = () => {
   return (
     <section id='Pricing' className='max-w-[1600px] m-auto min-h-[100vh] py-16 px-4'>
       <Heading title='Pricing & Services' trigger='pricing' />
-      
+
       <div className="mt-16">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -116,7 +122,7 @@ const Pricing = () => {
           </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
           variants={containerVariants}
           initial="hidden"
@@ -127,13 +133,13 @@ const Pricing = () => {
             <motion.div
               key={pkg.id}
               variants={cardVariants}
-              whileHover={{ 
+              whileHover={{
                 y: -10,
                 transition: { duration: 0.3 }
               }}
               className={`relative rounded-2xl p-8 transition-all duration-300 ${
-                pkg.highlight 
-                  ? 'bg-gradient-to-br from-blue-600/20 to-blue-800/20 border-2 border-blue-500/50 shadow-blue-500/20' 
+                pkg.highlight
+                  ? 'bg-gradient-to-br from-blue-600/20 to-blue-800/20 border-2 border-blue-500/50 shadow-blue-500/20'
                   : 'bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700'
               } hover:shadow-2xl backdrop-blur-sm`}
             >
@@ -146,7 +152,7 @@ const Pricing = () => {
               )}
 
               <div className="text-center mb-8">
-                <div className="text-4xl mb-4">{pkg.icon}</div>
+                <div className="flex justify-center mb-4 text-white">{pkg.icon}</div>
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
                   {pkg.title}
                 </h3>
@@ -162,7 +168,7 @@ const Pricing = () => {
               </div>
 
               <div className="space-y-4 mb-8">
-                <h4 className="font-semibold text-blue-400 mb-4">What&apos;s Included:</h4>
+                <h4 className="font-semibold text-gray-300 mb-4">What&apos;s Included:</h4>
                 {pkg.features.map((feature, index) => (
                   <motion.div
                     key={index}
@@ -172,7 +178,7 @@ const Pricing = () => {
                     transition={{ delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <div className="w-2 h-2 bg-blue-400 rounded-full flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0"></div>
                     <span className="text-gray-300">{feature}</span>
                   </motion.div>
                 ))}
@@ -199,7 +205,7 @@ const Pricing = () => {
           ))}
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="text-center mt-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -209,8 +215,8 @@ const Pricing = () => {
           <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 rounded-2xl p-8 border border-gray-700 max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-white mb-4">Need Something Custom?</h3>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Every project is unique. These are starting prices for standard implementations. 
-              Complex features, integrations, or custom requirements may adjust the final quote. 
+              Every project is unique. These are starting prices for standard implementations.
+              Complex features, integrations, or custom requirements may adjust the final quote.
               Let&apos;s discuss your specific needs!
             </p>
             <motion.button

@@ -10,7 +10,7 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import Hero from '@/components/Hero';
 import ScrollProgress from '@/components/ScrollProgress';
-import BackToTop from '@/components/BackToTop';
+import AskMe from '@/components/AskMe';
 import Pricing from '@/components/Pricing';
 import Automation from '@/components/Automation';
 import Process from '@/components/Process';
@@ -43,7 +43,7 @@ export default function Home() {
       <Pricing />
       <Contact />
       <Footer />
-      <BackToTop />
+      <AskMe />
     </div>
 
   )
