@@ -71,7 +71,7 @@ const AskMe: React.FC = () => {
             <div className="flex items-center justify-between px-5 py-4 border-b border-gray-700">
               <div>
                 <p className="text-white font-semibold text-sm">Ask me anything</p>
-                <p className="text-gray-400 text-xs mt-0.5">I'll reply to your email</p>
+                <p className="text-gray-400 text-xs mt-0.5">I&apos;ll reply to your email</p>
               </div>
               <button
                 onClick={() => setOpen(false)}
