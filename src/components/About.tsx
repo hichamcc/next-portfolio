@@ -11,7 +11,7 @@ function About() {
     const introRef = useRef<HTMLInputElement>(null);
 
     const stats = [
-        { number: '5', label: '+ Years Of Experience' },
+        { number: '7', label: '+ Years Of Experience' },
         { number: '99', label: '% Client Satisfaction' },
         { number: '70', label: '+ Completed Projects' }
       ];
