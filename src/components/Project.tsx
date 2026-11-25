@@ -89,7 +89,6 @@ const projects: ProjectItem[] = [
       solution:
         "Built a full digital business card platform with NFC & QR sharing, a personal CRM to manage contacts, and an analytics dashboard showing view counts and engagement. Each user gets a public profile link and can update their info any time without reprinting.",
       results: [
-        { metric: "500+", label: "Active users at launch" },
         { metric: "0", label: "Printing costs for users" },
         { metric: "Real-time", label: "Analytics on card views" },
         { metric: "1 tap", label: "Contact sharing via NFC" },
