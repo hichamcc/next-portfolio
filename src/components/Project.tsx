@@ -19,8 +19,10 @@ interface ProjectItem {
   title: string;
   category: string;
   description: string;
+  summary: string;
+  features: string[];
   image: string;
-  link: string;
+  link?: string;
   caseStudy?: CaseStudy;
 }
 
@@ -30,6 +32,9 @@ const projects: ProjectItem[] = [
     title: "True Form Elite",
     category: "Full Stack",
     description: "90-day transformation fitness and nutrition platform",
+    summary:
+      "A coaching platform that replaces spreadsheets and WhatsApp check-ins for a 90-day transformation program. Coaches onboard clients, assign personalised meal and workout plans, and review weekly check-ins from one dashboard, while clients follow their plan and log progress.",
+    features: ["Coach & client dashboards", "Personalised programs", "Weekly check-ins", "Automated email reminders"],
     image: trueform.src,
     link: "https://app.trueformnutrition.com.au/",
     caseStudy: {
@@ -51,6 +56,9 @@ const projects: ProjectItem[] = [
     title: "UI Artisan",
     category: "Web Design",
     description: "UI component library and design system",
+    summary:
+      "A library of reusable UI components and design tokens for building consistent interfaces quickly. Each component is documented with live previews and copy-ready code, so teams can drop them straight into their projects.",
+    features: ["Reusable components", "Live previews", "Copy-ready code", "Consistent design tokens"],
     image: uiartisan.src,
     link: "https://uiartisan.vercel.app/",
   },
@@ -59,14 +67,20 @@ const projects: ProjectItem[] = [
     title: "CostMeet",
     category: "Web App",
     description: "Meeting cost calculator for efficient time management",
+    summary:
+      "A calculator that shows what a meeting really costs in real time, based on the number of attendees and their rates. It helps teams question unnecessary meetings and keep the ones they hold short and focused.",
+    features: ["Live cost ticker", "Attendee & rate inputs", "Shareable results", "No sign-up needed"],
     image: costmeet.src,
-    link: "https://costmeet.com",
+    link: "https://costmeet-web.vercel.app/",
   },
   {
     id: 4,
     title: "BsnCard",
     category: "Web App",
     description: "Digital business cards and networking CRM platform",
+    summary:
+      "A digital business card platform that lets professionals share their details with one tap via NFC or QR code. A built-in CRM keeps track of new contacts, and an analytics dashboard shows who viewed each card and when.",
+    features: ["NFC & QR sharing", "Personal CRM", "View analytics", "Editable public profile"],
     image: bsncard.src,
     link: "https://bsncard.com/",
     caseStudy: {
@@ -88,14 +102,19 @@ const projects: ProjectItem[] = [
     title: "ContentOps",
     category: "Web App",
     description: "Project management dashboard for content operations",
+    summary:
+      "An internal dashboard for planning and tracking content production. Teams see every piece of content moving from brief to published, with owners, deadlines and status in one view.",
+    features: ["Pipeline board", "Owners & deadlines", "Status tracking", "Team overview"],
     image: contentops.src,
-    link: "#",
   },
   {
     id: 6,
     title: "SGE Prime Contracting",
     category: "Full Stack",
     description: "General contracting and civil construction company in Cochrane, Alberta",
+    summary:
+      "The company website for a general contracting and civil construction firm based in Cochrane, Alberta. It presents their services and past work, and makes it easy for prospective clients to request a quote.",
+    features: ["Services showcase", "Project portfolio", "Quote request form", "Mobile-first layout"],
     image: sge.src,
     link: "https://sgeltd.ca/",
   },
@@ -146,10 +165,11 @@ export function Project() {
             key={project.id}
             layoutId={`project-${project.id}`}
             onClick={() => handleOpen(project.id)}
-            className="relative group cursor-pointer rounded-xl overflow-hidden bg-gray-800 aspect-[4/3]"
+            className="group cursor-pointer rounded-xl overflow-hidden bg-gray-800 border border-gray-700/60 hover:border-blue-500/50 transition-colors flex flex-col"
             whileHover={{ y: -5 }}
             transition={{ duration: 0.2 }}
           >
+            <div className="relative aspect-[16/10] overflow-hidden">
             <Image
               src={project.image}
               alt={project.title}
@@ -161,21 +181,21 @@ export function Project() {
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="absolute bottom-0 p-6 w-full">
-                <h3 className="text-xl font-bold text-white mb-1">{project.title}</h3>
-                <p className="text-gray-300 mb-3 text-sm">{project.description}</p>
-                <div className="flex items-center gap-2">
-                  <span className="px-3 py-1 bg-blue-500 rounded-full text-white text-sm font-medium">
-                    View Project
-                  </span>
-                  {project.caseStudy && (
-                    <span className="px-3 py-1 bg-gray-700/80 rounded-full text-blue-300 text-sm font-medium border border-blue-500/40">
-                      Case Study ✦
-                    </span>
-                  )}
-                </div>
+              {project.caseStudy && (
+                <span className="absolute top-3 right-3 px-2.5 py-1 bg-gray-900/80 backdrop-blur-sm rounded-full text-blue-300 text-xs font-medium border border-blue-500/40">
+                  Case Study ✦
+                </span>
+              )}
+            </div>
+            <div className="p-4 md:p-5 flex flex-col gap-1.5 flex-1">
+              <div className="flex items-center justify-between gap-3">
+                <h3 className="text-lg font-bold text-white">{project.title}</h3>
+                <span className="text-xs font-medium text-blue-400 whitespace-nowrap">{project.category}</span>
               </div>
+              <p className="text-gray-400 text-sm leading-relaxed">{project.description}</p>
+              <span className="mt-auto pt-2 text-sm font-medium text-blue-400 group-hover:text-blue-300 transition-colors">
+                View details →
+              </span>
             </div>
           </motion.div>
         ))}
@@ -289,13 +309,13 @@ export function Project() {
                             <div className="space-y-4">
                               <h3 className="text-lg font-semibold text-blue-400">About This Project</h3>
                               <p className="text-gray-300 leading-relaxed text-base md:text-lg">
-                                {selectedProject.description}
+                                {selectedProject.summary}
                               </p>
                             </div>
                             <div className="space-y-3">
                               <h3 className="text-lg font-semibold text-blue-400">Key Features</h3>
                               <div className="flex flex-wrap gap-2">
-                                {["Responsive Design", "Modern UI", "Performance Optimized"].map((f, i) => (
+                                {selectedProject.features.map((f, i) => (
                                   <span key={i} className="px-3 py-1 text-sm bg-gray-700/50 text-gray-300 rounded-md border border-gray-600">
                                     {f}
                                   </span>
@@ -304,6 +324,7 @@ export function Project() {
                             </div>
                           </div>
                           <div className="pt-6 flex flex-col sm:flex-row gap-3">
+                            {selectedProject.link ? (
                             <motion.a
                               href={selectedProject.link}
                               target="_blank"
@@ -317,6 +338,11 @@ export function Project() {
                               </svg>
                               Visit Project
                             </motion.a>
+                            ) : (
+                              <span className="flex-1 flex items-center justify-center px-6 py-3 rounded-lg bg-gray-700/40 border border-gray-600 text-gray-400 font-medium cursor-not-allowed">
+                                Private internal tool
+                              </span>
+                            )}
                             {selectedProject.caseStudy && (
                               <motion.button
                                 onClick={() => setActiveTab("case-study")}
@@ -404,6 +430,7 @@ export function Project() {
 
                             {/* Actions */}
                             <div className="pt-4 flex flex-col sm:flex-row gap-3">
+                              {selectedProject.link && (
                               <motion.a
                                 href={selectedProject.link}
                                 target="_blank"
@@ -414,6 +441,7 @@ export function Project() {
                               >
                                 Visit Project
                               </motion.a>
+                              )}
                               <motion.button
                                 onClick={() => setSelectedId(null)}
                                 className="px-6 py-3 bg-gray-700/50 hover:bg-gray-600/50 transition-colors rounded-lg text-gray-300 font-medium border border-gray-600"
